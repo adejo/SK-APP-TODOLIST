@@ -30,3 +30,20 @@ def add_to_do(msdata):
             return True
         except Exception as e:
             return str(e)
+        
+def Read_todo(date_):
+    conn = mysql_con()
+    cursor = conn.cursor()
+    cursor.execute("select *  FROM INCIDENT_LOGS.dbo.Daily_incidents where date_ < ?",(date_))
+    # fetch all of the rows from the query
+    data = cursor.fetchall()
+    # create a list with dictionary of rows
+    data_set = []
+    for row in data:
+        data = {
+            "Date_": row[0],
+            "Threat_type": row[1],
+            "Threat_name": row[2],
+        }
+        data_set.append(data)
+    return data_set
