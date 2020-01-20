@@ -29,5 +29,12 @@ def save_todo():
     except:
         pass
 
+    
+@app.route('/view_todolist/<order_id>')
+def view_todolist(order_id):
+      task = databasehandle.(order_id)
+      return render_template('mytodolist.html', users=task)
+    
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=2241)
