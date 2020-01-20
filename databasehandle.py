@@ -14,7 +14,7 @@ def mysql_con():
 def add_to_do(msdata):
         conn = mysql_con()
         corsor = conn.cursor()
-        query = """INSERT INTO ISM_KPI.dbo.mytodo (
+        query = """INSERT INTO mytodo.dbo.mytodo (
                         
                         [todo_name],
                         [date],
@@ -34,7 +34,7 @@ def add_to_do(msdata):
 def Read_todo(date_):
     conn = mysql_con()
     cursor = conn.cursor()
-    cursor.execute("select *  FROM INCIDENT_LOGS.dbo.Daily_incidents where date_ < ?",(date_))
+    cursor.execute("select *  FROM mytodo)
     # fetch all of the rows from the query
     data = cursor.fetchall()
     # create a list with dictionary of rows
