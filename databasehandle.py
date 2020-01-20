@@ -11,7 +11,7 @@ def mysql_con():
     return conn
 
 
-def local_log(msdata):
+def add_to_do(msdata):
         conn = mysql_con()
         corsor = conn.cursor()
         query = """INSERT INTO ISM_KPI.dbo.mytodo (
