@@ -41,9 +41,9 @@ def Read_todo(date_):
     data_set = []
     for row in data:
         data = {
-            "Date_": row[0],
-            "Threat_type": row[1],
-            "Threat_name": row[2],
+            "Todo": row[0],
+            "Date": row[1],
+            "Description": row[2],
         }
         data_set.append(data)
     return data_set
