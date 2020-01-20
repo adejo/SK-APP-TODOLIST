@@ -20,12 +20,12 @@ def index_page_with_session():
 @app.route('/insert_item', methods=['POST', 'GET'])
 def log_inc():
     try:
-        task_name = request.form['inc-date']
-        date = request.form['target_sys']
-        description = request.form['os']
+        task_name = request.form['todo_name']
+        date = request.form['date']
+        description = request.form['desc']
    
-        data = [inc_date_frm_RSA, target_sys, target_os]
-        test = rest_post.local_log(data)
+        data = [task_name, date, description]
+        rest_post.add_todo(data)
     except:
         pass
 
