@@ -18,14 +18,14 @@ def index_page_with_session():
     
 
 @app.route('/insert_item', methods=['POST', 'GET'])
-def log_inc():
+def save_todo():
     try:
         task_name = request.form['todo_name']
         date = request.form['date']
         description = request.form['desc']
    
         data = [task_name, date, description]
-        rest_post.add_todo(data)
+        databasehandle.add_todo(data)
     except:
         pass
 
